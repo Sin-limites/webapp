@@ -1,23 +1,13 @@
 <?php
 
-include 'config.php';
+include_once('../application/includes.php');
+
+include_once('../application/templates/header.php');
+
 
 ?>
 
-<!DOCTYPE html>
 
-
-<head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="res/css/main.css">
-	<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script>
-
-	<?php include 'parseData.php'; ?>
-	<?php //include 'gmaps.php'; ?>
-
-</head>
-
-<body>
 <!-- container -->
 <div class="container">
 
@@ -25,7 +15,7 @@ include 'config.php';
 	<div class="header">
 		<!-- logo -->
 		<div class="logo">
-			<a href="#"><img src="res/images/logo.png"></a>
+			<a href=""><img src="res/images/logo.png"></a>
 		</div><!-- /logo -->
 
 		<!-- nav -->
@@ -49,11 +39,9 @@ include 'config.php';
 	<div class="holder_content">
 		<section class="group1_data">
 			<h3>Informatie containers</h3>
+			
 			<?php
-
-//				$con = mysqli_connect("localhost","sinlimites","tech4life","sinlimites");
 				$result = mysqli_query($con,"SELECT * FROM p78_Goods");
-
 
 				echo "<table border='1' id='goods_data'>
 				<tr>
@@ -93,5 +81,6 @@ include 'config.php';
 		</div><!-- /footer -->
 	</footer>
 </div><!-- /container -->
-</body>
-<!-- key=AIzaSyDGwUpTVd6XKuYSpd2dJeEBfC4KDCYxNIs& -->
+
+<?php include_once('../application/templates/footer.php');
+
