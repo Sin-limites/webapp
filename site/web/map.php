@@ -1,9 +1,9 @@
 
 <?php 
 
-include_once('../application/includes.php'); 
+include_once('../app/includes.php'); 
 
-include_once('../application/templates/header.php');
+include_once('../app/templates/header.php');
 
 ?>
 
@@ -55,5 +55,5 @@ include_once('../application/templates/header.php');
 </div><!-- /container -->
 
 
-<?php include_once('../application/templates/footer.php');
+<?php include_once('../app/templates/footer.php');
 

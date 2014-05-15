@@ -11,7 +11,7 @@
   // See if map.php is the current file, if true include the gmap file
   $scriptName = explode('/', $_SERVER['SCRIPT_NAME']);
   if(in_array('map.php', $scriptName)) {
-    include_once('../application/model/gmap.php');
+    include_once('../app/model/gmap.php');
   }
   ?>
   

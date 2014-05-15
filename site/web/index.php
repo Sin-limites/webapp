@@ -1,9 +1,22 @@
+<?php
 
-<?php 
+include "../autoloader/autoloader.php";
+include "../config/exeption_handler.php";
 
-include_once('../application/includes.php'); 
+set_exception_handler('exception_handler');
 
-include_once('../application/templates/header.php');
+$pdo = dbConnect::getInstance();
+
+base::initialize();
+
+
+page::load($_SERVER['REQUEST_URI']);
+
+
+exit;
+include_once('../app/includes.php'); 
+
+include_once('../app/templates/header.php');
 
 ?>
 
@@ -67,5 +80,5 @@ include_once('../application/templates/header.php');
 	</footer>
 </div><!-- /container -->
 
-<?php include_once('../application/templates/footer.php');
+<?php include_once('../app/templates/footer.php');
 
