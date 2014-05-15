@@ -4,7 +4,11 @@
  * 
  */
  
+ session_start();
+ 
+ // Config files
  include_once('config/config.php');
  include_once('config/database.php');
  
- include_once('../application/model/parseData.php');
+ // Model files
+ include_once('model/parseData.php');

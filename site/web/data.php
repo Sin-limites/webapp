@@ -1,9 +1,7 @@
 <?php
 
 include_once('../application/includes.php');
-
 include_once('../application/templates/header.php');
-
 
 ?>
 
