@@ -1,3 +1,9 @@
+<?php
+
+include 'config.php';
+
+?>
+
 <!DOCTYPE html>
 
 
@@ -6,8 +12,8 @@
 	<link rel="stylesheet" href="res/css/main.css">
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script>
 
-	<?php include 'parsedata.php'; ?>
-	<?php include 'gmaps.php'; ?>
+	<?php include 'parseData.php'; ?>
+	<?php //include 'gmaps.php'; ?>
 
 </head>
 
@@ -44,11 +50,10 @@
 		<section class="group1_data">
 			<h3>Informatie containers</h3>
 			<?php
-				if (mysqli_connect_errno()) {
-					echo "Failed to connect to MySQL: " . mysqli_connect_error();
-				}
 
-				$result = mysqli_query($con,"SELECT * FROM p78_goods");
+//				$con = mysqli_connect("localhost","sinlimites","tech4life","sinlimites");
+				$result = mysqli_query($con,"SELECT * FROM p78_Goods");
+
 
 				echo "<table border='1' id='goods_data'>
 				<tr>

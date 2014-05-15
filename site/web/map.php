@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="res/css/main.css">
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script>
 
-	<?php include 'parsedata.php'; ?>
+	<?php include 'parseData.php'; ?>
 	<?php include 'gmaps.php'; ?>
 
 </head>

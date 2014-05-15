@@ -1,6 +1,6 @@
 <?php
-
-	$con=mysqli_connect("localhost","root","","sinlimites");
+	
+	$con=mysqli_connect("localhost","sinlimites","tech4life","sinlimites");
 	
 	$sql = "SELECT Equipment_number,Latitude,Longitude FROM p78_Goods";
 
