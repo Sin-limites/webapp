@@ -4,6 +4,7 @@ class mvc{
     
     public $uri;
     public $model;
+    protected $view = '/';
     
     public function __construct($uri)
     {
@@ -28,7 +29,7 @@ class mvc{
         if(is_array($vars) && count($vars) > 0)
             extract($vars, EXTR_PREFIX_SAME, "wddx");
         
-        require_once('../' . $view.'.php');
+        require_once('view/'.$view.'.php');
     }
 
     public function loadModel($model)
