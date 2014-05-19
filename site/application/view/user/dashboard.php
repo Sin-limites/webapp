@@ -18,7 +18,7 @@ include_once('../app/includes.php');
   if(in_array('map.php', $scriptName)) {
     include_once('../app/model/gmap.php');
   }
-  ?>
+  ?> 
   
   
 </head>
