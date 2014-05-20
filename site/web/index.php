@@ -1,8 +1,8 @@
 <?php
 
-session_start();
-
 date_default_timezone_set('Europe/Amsterdam');
+
+session_start();
 
 include "../autoloader/autoloader.php";
 include "../config/exeption_handler.php";

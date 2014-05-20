@@ -5,6 +5,11 @@ class user extends mvc{
     public function __construct()
     {
         $this->loadModel('userModel');
+        // Check if the session exists. If it doesnt go to the login form.
+        if(!isset($_SESSION['log'])){
+          $this->login('');
+          exit;
+        }
     }
     
     /*

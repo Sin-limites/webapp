@@ -1,5 +1,5 @@
 <?php
-include_once('../app/includes.php'); 
+// include_once('../app/includes.php'); 
 
 ?>
 
@@ -14,17 +14,15 @@ include_once('../app/includes.php');
   
   <?php 
   // See if map.php is the current file, if true include the gmap file
-  $scriptName = explode('/', $_SERVER['SCRIPT_NAME']);
-  if(in_array('map.php', $scriptName)) {
-    include_once('../app/model/gmap.php');
-  }
+  // $scriptName = explode('/', $_SERVER['SCRIPT_NAME']);
+  // if(in_array('map.php', $scriptName)) {
+    // include_once('../app/model/gmap.php');
+  // }
   ?>
   
   
 </head>
-
 <body>
-
 
 <!-- container -->
 <div class="container">

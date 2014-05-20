@@ -16,7 +16,6 @@ class userInfo
     $this->row = $query->fetch(PDO::FETCH_ASSOC);
   }
   
-  
   public function getUser()
   {
     return ucfirst($this->row['name']);
