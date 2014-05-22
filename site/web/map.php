@@ -39,6 +39,7 @@ include_once('../application/templates/header.php');
 	<div class="holder_content">
 		<section class="group1_sidebar">
 			<h3>Filters..?</h3>
+			<a onclick="moveViewport(51.8946824,4.4203214)" href="javascript:void(0);">klik</a>
 		</section>
 
 		<section class="group2_map">
