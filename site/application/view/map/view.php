@@ -32,3 +32,29 @@
 
   google.maps.event.addDomListener(window, 'load', initialize);
   </script>
+
+  <!-- intro -->
+  <div class="intro">
+    <div id="banner">
+      <img src="/res/images/banner_01.png" />
+    </div>
+  </div><!-- /intro -->
+
+  <!-- content -->
+  <div class="holder_content">
+    <section class="group1_sidebar">
+      <h3>Filters..?</h3>
+    </section>
+
+    <section class="group2_map">
+      <div id="map_canvas"></div>
+    </section>
+  </div>
+
+  <!-- footer -->
+  <footer>
+    <div class="footer">
+      Copyright &copy; Sin Limites, 2014
+    </div><!-- /footer -->
+  </footer>
+</div><!-- /container -->

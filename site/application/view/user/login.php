@@ -2,8 +2,6 @@
 if(!empty($_SESSION['log'])){
   header('Location: /user/dashboard/');
 }
-include_once "_header.php";
-
 ?>
 
   <div id="main" class="grouping spacing">

@@ -6,6 +6,9 @@ class userInfo
   protected $row;
   protected $pdo;
   
+  /*
+   * 
+   */
   public function __construct($id)
   {
     $this->pdo = dbConnect::getInstance();
@@ -16,16 +19,25 @@ class userInfo
     $this->row = $query->fetch(PDO::FETCH_ASSOC);
   }
   
+  /*
+   * 
+   */
   public function getUser()
   {
-    return ucfirst($this->row['name']);
+    return ucfirst($this->row['username']);
   }
+  
+  /*
+   * 
+   */
   public function getUserEmail()
   {
     return $this->row['email'];
   }
   
-  
+  /*
+   * 
+   */
   public function getRank($rank=false)
   {
     // if(empty($rank)){ 
