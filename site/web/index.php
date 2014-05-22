@@ -1,71 +1,74 @@
+<?php
 
-<?php 
+date_default_timezone_set('Europe/Amsterdam');
 
-include_once('../application/includes.php'); 
-
-include_once('../application/templates/header.php');
+session_start();
 
 ?>
 
+<!DOCTYPE html>
 
-<!-- container -->
-<div class="container">
+<html>
 
-	<!-- header -->
-	<div class="header">
-		<!-- logo -->
-		<div class="logo">
-			<a href=""><img src="res/images/logo.png"></a>
-		</div><!-- /logo -->
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/res/css/main.css">
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script>
+  
+  <?php 
+  // See if map.php is the current file, if true include the gmap file
+  // $scriptName = explode('/', $_SERVER['SCRIPT_NAME']);
+  // if(in_array('map.php', $scriptName)) {
+    // include_once('../app/model/gmap.php');
+  // }
+  ?>
+  
+  
+</head>
+<body>
 
-		<!-- nav -->
-		<div class="nav"><span>
-			<ul>
-				<li class="current"><a href="#">home</a></li>
-				<li><a href="data.php">data</a></li>
-				<li><a href="map.php">map</a></li>
-			</ul></span>
-		</div><!-- /nav -->
-	</div><!-- /header -->
+<?php
 
-	<!-- intro -->
-	<div class="intro">
-		<div id="banner">
-			<img src="res/images/banner_01.png" />
-		</div>
-	</div><!-- /intro -->
+include "../autoloader/autoloader.php";
+include "../config/exeption_handler.php";
 
-	<!-- content -->
-	<div class="holder_content">
-		<section class="group1_about">
-			<h3>Over ons..</h3>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Sed aliquam sem ut arcu. Phasellus sollicitudin. 
-			Vestibulum condimentum  facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.</p>
-			<a href="#">Meer..</a>
-		</section>
+set_exception_handler('exception_handler');
 
-		<section class="group2_service">
-			<h3>Service</h3>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Sed aliquam sem ut arcu. Phasellus sollicitudin. 
-			Vestibulum condimentum  facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.</p>
-			<a href="#">Meer..</a>
-		</section>
+$pdo = dbConnect::getInstance();
 
-		<section class="group3_contact">
-			<h3>Contact</h3>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Sed aliquam sem ut arcu. Phasellus sollicitudin. 
-			Vestibulum condimentum  facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.</p>
-			<a href="#">Meer..</a>
-		</section>
-	</div>
+$url = $_SERVER['REQUEST_URI'];
 
-	<!-- footer -->
-	<footer>
-		<div class="footer">
-			Copyright &copy; Sin Limites, 2014
-		</div><!-- /footer -->
-	</footer>
-</div><!-- /container -->
+$array_tmp_uri = preg_split('[\\/]', $url, -1, PREG_SPLIT_NO_EMPTY);
 
-<?php include_once('../application/templates/footer.php');
+$array_uri = array(
+    'controller' => 'user',
+    'method' => 'login',
+    'var' => array()
+);
 
+foreach ($array_tmp_uri as $key => $val)
+  {
+  switch($key) {
+    case 0:
+      $array_uri['controller'] = $val;
+      break;
+    case 1:
+      $array_uri['method'] = $val;
+    break;
+    default:
+      $array_uri['var'][] = $val;
+  }
+}
+
+// Show the header for user.
+include_once "../application/view/user/_header.php";
+
+$app = new mvc($array_uri);
+$app->loadController($array_uri['controller']);
+
+?>
+
+  </body>
+  <!-- key=AIzaSyDGwUpTVd6XKuYSpd2dJeEBfC4KDCYxNIs& -->
+
+</html>

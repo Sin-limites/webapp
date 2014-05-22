@@ -1,32 +1,13 @@
 
 <?php 
 
-include_once('../application/includes.php'); 
+include_once('../app/includes.php'); 
 
-include_once('../application/templates/header.php');
+include_once('../app/templates/header.php');
 
 ?>
 
 
-<!-- container -->
-<div class="container">
-
-	<!-- header -->
-	<div class="header">
-		<!-- logo -->
-		<div class="logo">
-			<a href=""><img src="res/images/logo.png"></a>
-		</div><!-- /logo -->
-
-		<!-- nav -->
-		<div class="nav">
-			<ul>
-				<li><a href="index.php">home</a></li>
-				<li><a href="data.php">data</a></li>
-				<li class="current"><a href="#">map</a></li>
-			</ul>
-		</div><!-- /nav -->
-	</div><!-- /header -->
 
 	<!-- intro -->
 	<div class="intro">
@@ -56,5 +37,5 @@ include_once('../application/templates/header.php');
 </div><!-- /container -->
 
 
-<?php include_once('../application/templates/footer.php');
+<?php include_once('../app/templates/footer.php');
 

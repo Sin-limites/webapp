@@ -7,4 +7,4 @@
  include_once('config/config.php');
  include_once('config/database.php');
  
- include_once('../application/model/parseData.php');
+ include_once('../app/model/parseData.php');
