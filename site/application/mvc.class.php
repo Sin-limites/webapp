@@ -11,13 +11,13 @@ class mvc{
      */
     public function __construct($uri)
     {
-        $this->uri = $uri;
         // Check if the session exists. If it doesnt go to the login form.
         if(!isset($_SESSION['log'])){
           $user = new user(); //Create user object
           $user->login(''); //Redirect to the login function
           exit;
         }
+        $this->uri = $uri;
     }
     
     /*
