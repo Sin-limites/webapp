@@ -1,25 +1,3 @@
-
-
-<!-- container -->
-<div class="container">
-
-  <!-- header -->
-  <div class="header">
-    <!-- logo -->
-    <div class="logo">
-      <a href=""><img src="/res/images/logo.png"></a>
-    </div><!-- /logo -->
-
-    <!-- nav -->
-    <div class="nav"><span>
-      <ul>
-        <li class="current"><a href="#">home</a></li>
-        <li><a href="#data.php">data</a></li>
-        <li><a href="#map.php">map</a></li>
-      </ul></span>
-    </div><!-- /nav -->
-  </div><!-- /header -->
-
   <!-- intro -->
   <div class="intro">
     <div id="banner">

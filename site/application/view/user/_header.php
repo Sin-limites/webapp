@@ -27,9 +27,9 @@ if(!empty($_SESSION['log'])){
     <!-- nav -->
     <div class="nav">
       <ul>
-        <li><a href="index.php">home</a></li>
-        <li><a href="data.php">data</a></li>
-        <li class="current"><a href="#">map</a></li>
+        <li><a href="/">home</a></li>
+        <li><a href="#">data</a></li>
+        <li><a href="/map/">map</a></li>
       </ul>
     </div><!-- /nav -->
   </div><!-- /header -->

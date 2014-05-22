@@ -11,6 +11,9 @@ session_start();
 <html>
 
 <head>
+  
+  <title>SIN LIMITES BAM JONGE</title>
+  
   <meta charset="utf-8">
   <link rel="stylesheet" href="/res/css/main.css">
   <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script>
@@ -60,11 +63,15 @@ foreach ($array_tmp_uri as $key => $val)
   }
 }
 
-// Show the header for user.
-include_once "../application/view/user/_header.php";
+if(isset($_SESSION['log'])){
+  // Show the header for user. -> Only show it when the user is logged in.. otherwize the login view will be very weird.
+  include_once "../application/view/user/_header.php";
+}
 
 $app = new mvc($array_uri);
 $app->loadController($array_uri['controller']);
+
+
 
 ?>
 

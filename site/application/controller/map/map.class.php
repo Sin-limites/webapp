@@ -9,8 +9,8 @@ class map extends mvc{
   /*
    * 
    */
-  public function view($data) {
-    $this->loadView(get_class($this) . $this->view . 'view',$data);
+  public function index($data) {
+    $this->loadView(get_class($this) . $this->view . 'index',$data);
     
     $locationData_js = 'lol';
   }
