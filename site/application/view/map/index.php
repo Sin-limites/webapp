@@ -1,15 +1,23 @@
+<?php
+
+  $map = new map();
+  $lol = $map->getLocationData();
+?>
+
 <script>
-  var data = <?php echo $locationData_js; ?>;
+  var data = <?php echo '; h; ' ?>;
   var heatmapData = new Array();
+  var map;
 
   function initialize() {
     var map_canvas = document.getElementById('map_canvas');
     var map_options = {
       center: new google.maps.LatLng(51.955454, 4.037449),
       zoom: 11,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      streetViewControl: false
     }
-    var map = new google.maps.Map(map_canvas, map_options)
+    map = new google.maps.Map(map_canvas, map_options)
   
     var marker = new google.maps.Marker({
       position: new google.maps.LatLng(51.955454, 4.037449),
@@ -27,7 +35,16 @@
     var pointArray = new google.maps.visualization.HeatmapLayer({
       data: heatmapData,
       map: map
-    });  
+    });
+  
+    //heatmap.setMap(map);
+  
+  }
+
+  function moveViewport(lat, lng){
+    var center = new google.maps.LatLng(lat, lng);
+    map.panTo(center);
+    // map.setZoom(15);
   }
 
   google.maps.event.addDomListener(window, 'load', initialize);

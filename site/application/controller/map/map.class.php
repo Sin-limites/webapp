@@ -1,7 +1,7 @@
 <?php
 
 class map extends mvc{
-  
+    
   public function __construct() {
         $this->loadModel('mapModel');
     }
@@ -11,8 +11,14 @@ class map extends mvc{
    */
   public function index($data) {
     $this->loadView(get_class($this) . $this->view . 'index',$data);
-    
-    $locationData_js = 'lol';
+  }
+  
+  /*
+   * 
+   */
+  public function getLocationData() {
+    // die('lol');
+    return json_encode(mapModel::parseData());
   }
   
 }

@@ -6,10 +6,8 @@ class userModel {
   {
     $pass = md5($pass);
     
-    $ip = $_SERVER['REMOTE_ADDR']; 
-    
     $pdo = dbConnect::getInstance();
-
+    
     if(empty($user) or empty($pass))
     {
       die('Niet alle velden zjin gevuld! Probeer nogmaals!');

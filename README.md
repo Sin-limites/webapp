@@ -1,7 +1,10 @@
-# Welcome
+# Sin Limites Web Application
 
-This is the Sin Limites readme file
-Have fun.
+Authors:
+- Axel Schelfhout
+- Lars Hoevenaar
+- Tim Sijstermans
 
-yeahhhh buddy!
-==============
+# Description
+
+This is the web application for the Emerging Technologies project for Hogeschool Rotterdam
