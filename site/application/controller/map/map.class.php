@@ -17,7 +17,6 @@ class map extends mvc{
    * 
    */
   public function getLocationData() {
-    // die('lol');
     return json_encode(mapModel::parseData());
   }
   

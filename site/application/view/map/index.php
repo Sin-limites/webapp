@@ -1,11 +1,11 @@
 <?php
 
   $map = new map();
-  $lol = $map->getLocationData();
+  
 ?>
 
 <script>
-  var data = <?php echo '; h; ' ?>;
+  var data = <?php echo $map->getLocationData(); ?>;
   var heatmapData = new Array();
   var map;
 
