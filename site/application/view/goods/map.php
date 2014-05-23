@@ -1,11 +1,11 @@
 <?php
 
-  $map = new map();
+  $goods = new goods();
   
 ?>
 
 <script>
-  var data = <?php echo $map->getLocationData(); ?>;
+  var data = <?php echo $goods->getLocationData(); ?>;
   var heatmapData = new Array();
   var map;
 
@@ -68,10 +68,3 @@
     </section>
   </div>
 
-  <!-- footer -->
-  <footer>
-    <div class="footer">
-      Copyright &copy; Sin Limites, 2014
-    </div><!-- /footer -->
-  </footer>
-</div><!-- /container -->

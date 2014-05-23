@@ -29,11 +29,4 @@
     </section>
   </div>
 
-  <!-- footer -->
-  <footer>
-    <div class="footer">
-      Copyright &copy; Sin Limites, 2014
-    </div><!-- /footer -->
-  </footer>
-</div><!-- /container -->
 
