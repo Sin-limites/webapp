@@ -7,4 +7,4 @@ Authors:
 
 # Description
 
-This is the web application for the Emerging Technologies project for Hogeschool Rotterdam
+This is the web application for the Emerging Technologies project for Hogeschool Rotterdam.
