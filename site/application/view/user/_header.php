@@ -1,15 +1,16 @@
 
-<div id="header" class="spacing">
+<div id="topheader" class="spacing">
 <?php
 if(!empty($_SESSION['log'])){
 
   $id = $_SESSION['log'];
   $user = new userInfo($id);
 ?>
-  <p id="whoami">Ingelogd als: <strong><?php echo $user->getUser() ?></strong> 
-
-<span class="line-spacer"><span class="line-spacer">|</span></span>  <a href="/user/logout/">Uitloggen</a>
-      </p>
+<div id="whoami" >
+  <p >Ingelogd als: <strong><?php echo $user->getUser() ?></strong>
+    <span class="line-spacer"><span class="line-spacer">|</span></span>  <a href="/user/logout/">Uitloggen</a>
+  </p>
+</div>
 <?php } ?>
 
 </div>
@@ -28,8 +29,8 @@ if(!empty($_SESSION['log'])){
     <div class="nav">
       <ul>
         <li><a href="/">home</a></li>
-        <li><a href="#">data</a></li>
-        <li><a href="/map/">map</a></li>
+        <li><a href="/goods/datalist/">data</a></li>
+        <li><a href="/goods/map/">map</a></li>
       </ul>
     </div><!-- /nav -->
   </div><!-- /header -->

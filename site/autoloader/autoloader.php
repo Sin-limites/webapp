@@ -70,10 +70,10 @@ class autoloader
   public static function loadClass($name)
   { 
     if(array_key_exists($name, self::$classes)) {
-     echo 'Current class: <b>'.$name.' ----></b> ';
+     // echo 'Current class: <b>'.$name.' ----></b> ';
       self::includeFile(self::$classes[$name]);
     }else{
-      echo 'failed to load class';
+      // echo 'failed to load class';
     }
     
   }
