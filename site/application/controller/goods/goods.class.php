@@ -27,6 +27,13 @@ class goods extends mvc{
     $this->loadView(get_class($this) . $this->view . 'list',$data);
   }
   
+  /*
+   * 
+   */
+  public function stowageDetail($data) {
+    $this->loadView(get_class($this) . $this->view . 'stowageDetail',$data);
+  }
+  
   
   /*
    * 
