@@ -3,9 +3,8 @@
   $goods = new goods();
   
 ?>
-
 <script>
-  var data = <?php echo $goods->getLocationData(); ?>;
+  var data = <?php echo $goods->getContainerLocationData(); ?>;
   var heatmapData = new Array();
   var map;
 
@@ -27,7 +26,8 @@
   
     for (var i = 0; i < data.length; i++) {
       var obj = data[i];
-      heatmapData.push({location: new google.maps.LatLng(obj.Latitude,obj.Longitude), weight: Math.random() * 100});
+      console.log(obj);
+      heatmapData.push({location: new google.maps.LatLng(obj.latitude,obj.longitude), weight: Math.random() * 100});
     }
   
     var pointArray = new google.maps.MVCArray(heatmapData);
@@ -36,9 +36,7 @@
       data: heatmapData,
       map: map
     });
-  
-    //heatmap.setMap(map);
-  
+    
   }
 
   function moveViewport(lat, lng){

@@ -45,8 +45,8 @@ class goods extends mvc{
   /*
    * 
    */
-  public function getLocationData() {
-    return json_encode(goodsModel::parseData());
+  public function getContainerLocationData() {
+    return json_encode(goodsModel::containerLocationData());
   }
   
 }
