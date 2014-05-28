@@ -28,7 +28,7 @@ $goods = new goods();
         
         <?php foreach($goods->getAllData() as $row) { ?>
           <tr>
-            <td><?php echo $row->equipmentnumber; ?></td>
+            <td><a href="/goods/containerDetail/<?php echo $row->equipmentnumber; ?>"><?php echo $row->equipmentnumber; ?></a>  </td>
             <td><?php echo $row->shipid; ?></td>
             <td><?php echo $row->handlingid; ?></td>
             <td><?php echo $row->packagingid; ?></td>
@@ -36,7 +36,7 @@ $goods = new goods();
             <td><?php echo $row->uno; ?></td>
             <td><?php echo $row->ino; ?></td>
             <td><?php echo $row->flashpoint; ?></td>
-            <td><?php echo $row->stowageposition; ?></td>
+            <td><a href="/goods/stowageDetail/<?php echo $row->stowageposition; ?>"><?php echo $row->stowageposition; ?></a></td>
             <td><?php echo $row->quantityincontainer; ?></td>
             <td><?php echo $row->weight; ?></td>
             <td><?php echo $row->portofdischarge; ?></td>
