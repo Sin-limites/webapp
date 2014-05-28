@@ -7,7 +7,7 @@
       <table border='1' id='goods_data'>
         <tr>
           <th>EQ</th>
-          <th>ShipID</th>
+          <th>ShipName</th>
           <th>HandlingID</th>
           <th>PackagingID</th>
           <th>ConsignmentNR</th>
@@ -23,7 +23,7 @@
         
           <tr>
             <td><?php echo $containerdetail->equipmentnumber; ?></td>
-            <td><?php echo $containerdetail->shipid; ?></td>
+            <td><?php echo $shipdetail->shipname; ?></td>
             <td><?php echo $containerdetail->handlingid; ?></td>
             <td><?php echo $containerdetail->packagingid; ?></td>
             <td><?php echo $containerdetail->consignmentnumber; ?></td>

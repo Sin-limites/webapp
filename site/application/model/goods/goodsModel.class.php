@@ -32,5 +32,12 @@ class goodsModel {
     
     return $data;
   }
+  
+  public static function loadShipDetail($id) {
+    $data = file_get_contents('http://145.24.222.137:8080/RestService/rest/ship/get/'.$id.'/');
+    $data = json_decode($data);
+    
+    return $data;
+  }
 
 }

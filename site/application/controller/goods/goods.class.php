@@ -36,7 +36,12 @@ class goods extends mvc{
   }
   
   public function containerDetail($data) {
-    $data['containerdetail'] = goodsModel::loadContainerDetail($data[0]);
+    $containerdetail = goodsModel::loadContainerDetail($data[0]);
+    $data['containerdetail'] = $containerdetail;
+    
+    $shipdetail = goodsModel::loadShipDetail($containerdetail->shipid);
+    $data['shipdetail'] = $shipdetail[0];
+    
     $this->loadView(get_class($this) . $this->view . 'containerDetail',$data);
   }
   
