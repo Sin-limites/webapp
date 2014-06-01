@@ -16,7 +16,9 @@ session_start();
   
   <meta charset="utf-8">
   <link rel="stylesheet" href="/res/css/main.css">
-  <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <script src="http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
   
   <?php 
   // See if map.php is the current file, if true include the gmap file

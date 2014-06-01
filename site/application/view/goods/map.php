@@ -4,51 +4,53 @@
   
 ?>
 
-<script>
-  var data = <?php echo $goods->getLocationData(); ?>;
-  var heatmapData = new Array();
-  var map;
+// <script>
+//   var data = <?php echo $goods->getLocationData(); ?>;
+//   var heatmapData = new Array();
+//   var map;
 
-  function initialize() {
-    var map_canvas = document.getElementById('map_canvas');
-    var map_options = {
-      center: new google.maps.LatLng(51.955454, 4.037449),
-      zoom: 11,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      streetViewControl: false
-    }
-    map = new google.maps.Map(map_canvas, map_options)
+//   function initialize() {
+//     var map_canvas = document.getElementById('map_canvas');
+//     var map_options = {
+//       center: new google.maps.LatLng(51.955454, 4.037449),
+//       zoom: 11,
+//       mapTypeId: google.maps.MapTypeId.ROADMAP,
+//       streetViewControl: false
+//     }
+//     map = new google.maps.Map(map_canvas, map_options)
   
-    var marker = new google.maps.Marker({
-      position: new google.maps.LatLng(51.955454, 4.037449),
-      map: map,
-      title: 'Hello World!'
-    });
+//     var marker = new google.maps.Marker({
+//       position: new google.maps.LatLng(51.955454, 4.037449),
+//       map: map,
+//       title: 'Hello World!'
+//     });
   
-    for (var i = 0; i < data.length; i++) {
-      var obj = data[i];
-      heatmapData.push({location: new google.maps.LatLng(obj.Latitude,obj.Longitude), weight: Math.random() * 100});
-    }
+//     for (var i = 0; i < data.length; i++) {
+//       var obj = data[i];
+//       heatmapData.push({location: new google.maps.LatLng(obj.Latitude,obj.Longitude), weight: Math.random() * 100});
+//     }
   
-    var pointArray = new google.maps.MVCArray(heatmapData);
+//     var pointArray = new google.maps.MVCArray(heatmapData);
     
-    var pointArray = new google.maps.visualization.HeatmapLayer({
-      data: heatmapData,
-      map: map
-    });
+//     var pointArray = new google.maps.visualization.HeatmapLayer({
+//       data: heatmapData,
+//       map: map
+//     });
   
-    //heatmap.setMap(map);
+//     //heatmap.setMap(map);
   
-  }
+//   }
 
-  function moveViewport(lat, lng){
-    var center = new google.maps.LatLng(lat, lng);
-    map.panTo(center);
-    // map.setZoom(15);
-  }
+//   function moveViewport(lat, lng){
+//     var center = new google.maps.LatLng(lat, lng);
+//     map.panTo(center);
+//     // map.setZoom(15);
+//   }
 
-  google.maps.event.addDomListener(window, 'load', initialize);
-  </script>
+//   google.maps.event.addDomListener(window, 'load', initialize);
+//   </script>
+
+
 
   <!-- intro -->
   <div class="intro">
@@ -60,11 +62,69 @@
   <!-- content -->
   <div class="holder_content">
     <section class="group1_sidebar">
-      <h3>Filters..?</h3>
+      <h3><a href="#" onclick="MoveToBookmark(1);return false;">Maasvlakte 1</a></h3>
+      <h3><a href="#" onclick="MoveToBookmark(2);return false;">Maasvlakte 2</a></h3>
+      <h3><a href="#" onclick="MoveToBookmark(3);return false;">Dintelhaven</a></h3>
+      <h3><a href="#" onclick="MoveToBookmark(4);return false;">Seinehaven</a></h3>
     </section>
 
     <section class="group2_map">
-      <div id="map_canvas"></div>
+      <div id="map"></div>
     </section>
   </div>
 
+<script>
+
+var data = <?php echo $goods->getLocationData(); ?>;
+var heatmapData = new Array();
+
+var map = L.map('map').setView([51.95823052624468, 4.051809310913086], 13);
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>',
+    maxZoom: 18,
+    minZoom: 12
+}).addTo(map);
+
+mapHmData(data);
+
+var heat = L.heatLayer(heatmapData,{
+    radius: 20,
+    blur: 15, 
+    maxZoom: 17,
+}).addTo(map);
+
+
+map.on('click', function(e) {
+    console.log("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
+});
+
+function mapHmData (input){
+    for (var i = 0; i < input.length; i++) {
+      var obj = input[i];
+      heatmapData.push(new L.LatLng(obj.Latitude,obj.Longitude,Math.random() * 5));
+    }
+    console.log(input[2].Latitude);
+}
+
+function MoveToBookmark(loc) {
+  switch (loc) {
+    case 1: 
+      //maasvlakte 1
+      map.panTo(new L.LatLng(51.95823052624468, 4.051809310913086));
+      break;
+    case 2:
+      //maasvlakte 2
+      map.panTo(new L.LatLng(51.94944960416181, 3.992757797241211));
+      break;
+    case 3:
+      //dintelhaven
+      map.panTo(new L.LatLng(51.95093084411432, 4.115195274353027));
+      break;
+    case 4:
+      //Seinehaven
+      map.panTo(new L.LatLng(51.879352249020855, 4.245293140411377));
+      break;   
+  }
+}
+
+</script>
