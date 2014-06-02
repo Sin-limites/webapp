@@ -4,6 +4,7 @@
   
 ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <script>
   var data = <?php echo $goods->getContainerLocationData(); ?>;
   var heatmapData = new Array();
@@ -19,6 +20,8 @@
     }
     map = new google.maps.Map(map_canvas, map_options)
 =======
+=======
+>>>>>>> origin/tim
 
 // <script>
 //   var data = <?php echo $goods->getLocationData(); ?>;
@@ -34,6 +37,9 @@
 //       streetViewControl: false
 //     }
 //     map = new google.maps.Map(map_canvas, map_options)
+<<<<<<< HEAD
+>>>>>>> origin/tim
+=======
 >>>>>>> origin/tim
   
 //     var marker = new google.maps.Marker({
@@ -43,16 +49,20 @@
 //     });
   
 <<<<<<< HEAD
+<<<<<<< HEAD
     for (var i = 0; i < data.length; i++) {
       var obj = data[i];
       console.log(obj);
       heatmapData.push({location: new google.maps.LatLng(obj.latitude,obj.longitude), weight: Math.random() * 100});
     }
 =======
+=======
+>>>>>>> origin/tim
 //     for (var i = 0; i < data.length; i++) {
 //       var obj = data[i];
 //       heatmapData.push({location: new google.maps.LatLng(obj.Latitude,obj.Longitude), weight: Math.random() * 100});
 //     }
+<<<<<<< HEAD
 >>>>>>> origin/tim
   
 //     var pointArray = new google.maps.MVCArray(heatmapData);
@@ -65,6 +75,11 @@
     
   }
 =======
+=======
+  
+//     var pointArray = new google.maps.MVCArray(heatmapData);
+    
+>>>>>>> origin/tim
 //     var pointArray = new google.maps.visualization.HeatmapLayer({
 //       data: heatmapData,
 //       map: map
@@ -73,6 +88,7 @@
 //     //heatmap.setMap(map);
   
 //   }
+<<<<<<< HEAD
 
 //   function moveViewport(lat, lng){
 //     var center = new google.maps.LatLng(lat, lng);
@@ -91,6 +107,19 @@
   
   </script>
 =======
+>>>>>>> origin/tim
+=======
+
+//   function moveViewport(lat, lng){
+//     var center = new google.maps.LatLng(lat, lng);
+//     map.panTo(center);
+//     // map.setZoom(15);
+//   }
+
+//   google.maps.event.addDomListener(window, 'load', initialize);
+//   </script>
+
+
 >>>>>>> origin/tim
 
   <!-- intro -->
@@ -183,4 +212,8 @@ function MoveToBookmark(loc) {
   }
 }
 
+<<<<<<< HEAD
 </script>
+=======
+</script>
+>>>>>>> origin/tim
