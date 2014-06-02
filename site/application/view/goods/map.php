@@ -4,48 +4,48 @@
   
 ?>
 <script>
-  // var data = <?php echo $goods->getContainerLocationData(); ?>;
-  // var heatmapData = new Array();
-  // var map;
-// 
-  // function initialize() {
-    // var map_canvas = document.getElementById('map_canvas');
-    // var map_options = {
-      // center: new google.maps.LatLng(51.955454, 4.037449),
-      // zoom: 11,
-      // mapTypeId: google.maps.MapTypeId.ROADMAP,
-      // streetViewControl: false
-    // }
-    // map = new google.maps.Map(map_canvas, map_options)
-//   
-    // var marker = new google.maps.Marker({
-      // position: new google.maps.LatLng(51.955454, 4.037449),
-      // map: map,
-      // title: 'Hello World!'
-    // });
-//   
-    // for (var i = 0; i < data.length; i++) {
-      // var obj = data[i];
-      // console.log(obj);
-      // heatmapData.push({location: new google.maps.LatLng(obj.latitude,obj.longitude), weight: Math.random() * 100});
-    // }
-//   
-    // var pointArray = new google.maps.MVCArray(heatmapData);
-//     
-    // var pointArray = new google.maps.visualization.HeatmapLayer({
-      // data: heatmapData,
-      // map: map
-    // });
-//     
-  // }
-// 
-  // function moveViewport(lat, lng){
-    // var center = new google.maps.LatLng(lat, lng);
-    // map.panTo(center);
-    // // map.setZoom(15);
-  // }
-// 
-  // google.maps.event.addDomListener(window, 'load', initialize);
+  var data = <?php echo $goods->getContainerLocationData(); ?>;
+  var heatmapData = new Array();
+  var map;
+
+  function initialize() {
+    var map_canvas = document.getElementById('map_canvas');
+    var map_options = {
+      center: new google.maps.LatLng(51.955454, 4.037449),
+      zoom: 11,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      streetViewControl: false
+    }
+    map = new google.maps.Map(map_canvas, map_options)
+  
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(51.955454, 4.037449),
+      map: map,
+      title: 'Hello World!'
+    });
+  
+    for (var i = 0; i < data.length; i++) {
+      var obj = data[i];
+      console.log(obj);
+      heatmapData.push({location: new google.maps.LatLng(obj.latitude,obj.longitude), weight: Math.random() * 100});
+    }
+  
+    var pointArray = new google.maps.MVCArray(heatmapData);
+    
+    var pointArray = new google.maps.visualization.HeatmapLayer({
+      data: heatmapData,
+      map: map
+    });
+    
+  }
+
+  function moveViewport(lat, lng){
+    var center = new google.maps.LatLng(lat, lng);
+    map.panTo(center);
+    // map.setZoom(15);
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
   
   
   </script>
@@ -64,19 +64,7 @@
     </section>
 
     <section class="group2_map">
-      <!-- <div id="map_canvas"></div> -->
-      <div id="map"></div>
+      <div id="map_canvas"></div>
     </section>
   </div>
-  
-  <script>
-    
-  var map = L.map('map').setView([51.505, -0.09], 13);
-  
-  L.tileLayer('http://{s}.tiles.mapbox.com/v3/sinlimites.ic4lm14n/{z}/{x}/{y}.png', {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    maxZoom: 18
-  }).addTo(map);
-  
-  </script>
 

@@ -18,7 +18,6 @@ session_start();
   <link rel="stylesheet" href="/res/css/main.css">
   <link rel="stylesheet" href="/res/css/leaflet.css">
   
-  <script src="/res/scripts/leaflet.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script>
   
 </head>
