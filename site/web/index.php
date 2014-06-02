@@ -17,6 +17,7 @@ session_start();
   <meta charset="utf-8">
   <link rel="stylesheet" href="/res/css/main.css">
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
@@ -30,6 +31,8 @@ session_start();
   // }
   ?>
 >>>>>>> origin/tim
+=======
+>>>>>>> d67f2bfc2ccbe3e6454f275266fa438ae455b034
   
   <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script>
   
