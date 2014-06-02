@@ -3,28 +3,9 @@
   $goods = new goods();
   
 ?>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<script>
-  var data = <?php echo $goods->getContainerLocationData(); ?>;
-  var heatmapData = new Array();
-  var map;
-
-  function initialize() {
-    var map_canvas = document.getElementById('map_canvas');
-    var map_options = {
-      center: new google.maps.LatLng(51.955454, 4.037449),
-      zoom: 11,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      streetViewControl: false
-    }
-    map = new google.maps.Map(map_canvas, map_options)
-=======
-=======
->>>>>>> origin/tim
 
 // <script>
-//   var data = <?php echo $goods->getLocationData(); ?>;
+//   var data = <?php //echo $goods->getLocationData(); ?>;
 //   var heatmapData = new Array();
 //   var map;
 
@@ -37,10 +18,6 @@
 //       streetViewControl: false
 //     }
 //     map = new google.maps.Map(map_canvas, map_options)
-<<<<<<< HEAD
->>>>>>> origin/tim
-=======
->>>>>>> origin/tim
   
 //     var marker = new google.maps.Marker({
 //       position: new google.maps.LatLng(51.955454, 4.037449),
@@ -48,38 +25,13 @@
 //       title: 'Hello World!'
 //     });
   
-<<<<<<< HEAD
-<<<<<<< HEAD
-    for (var i = 0; i < data.length; i++) {
-      var obj = data[i];
-      console.log(obj);
-      heatmapData.push({location: new google.maps.LatLng(obj.latitude,obj.longitude), weight: Math.random() * 100});
-    }
-=======
-=======
->>>>>>> origin/tim
 //     for (var i = 0; i < data.length; i++) {
 //       var obj = data[i];
 //       heatmapData.push({location: new google.maps.LatLng(obj.Latitude,obj.Longitude), weight: Math.random() * 100});
 //     }
-<<<<<<< HEAD
->>>>>>> origin/tim
   
 //     var pointArray = new google.maps.MVCArray(heatmapData);
     
-<<<<<<< HEAD
-    var pointArray = new google.maps.visualization.HeatmapLayer({
-      data: heatmapData,
-      map: map
-    });
-    
-  }
-=======
-=======
-  
-//     var pointArray = new google.maps.MVCArray(heatmapData);
-    
->>>>>>> origin/tim
 //     var pointArray = new google.maps.visualization.HeatmapLayer({
 //       data: heatmapData,
 //       map: map
@@ -88,27 +40,6 @@
 //     //heatmap.setMap(map);
   
 //   }
-<<<<<<< HEAD
-
-//   function moveViewport(lat, lng){
-//     var center = new google.maps.LatLng(lat, lng);
-//     map.panTo(center);
-//     // map.setZoom(15);
-//   }
-
-//   google.maps.event.addDomListener(window, 'load', initialize);
-//   </script>
->>>>>>> origin/tim
-
-
-<<<<<<< HEAD
-  google.maps.event.addDomListener(window, 'load', initialize);
-  
-  
-  </script>
-=======
->>>>>>> origin/tim
-=======
 
 //   function moveViewport(lat, lng){
 //     var center = new google.maps.LatLng(lat, lng);
@@ -120,7 +51,6 @@
 //   </script>
 
 
->>>>>>> origin/tim
 
   <!-- intro -->
   <div class="intro">
@@ -212,8 +142,4 @@ function MoveToBookmark(loc) {
   }
 }
 
-<<<<<<< HEAD
 </script>
-=======
-</script>
->>>>>>> origin/tim

@@ -16,27 +16,11 @@ session_start();
   
   <meta charset="utf-8">
   <link rel="stylesheet" href="/res/css/main.css">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/tim
+
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <script src="http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
-  
-  <?php 
-  // See if map.php is the current file, if true include the gmap file
-  // $scriptName = explode('/', $_SERVER['SCRIPT_NAME']);
-  // if(in_array('map.php', $scriptName)) {
-    // include_once('../app/model/gmap.php');
-  // }
-  ?>
->>>>>>> origin/tim
-=======
->>>>>>> d67f2bfc2ccbe3e6454f275266fa438ae455b034
-  
+
   <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script>
   
 </head>
