@@ -22,7 +22,8 @@ $goods = new goods();
           <th>Stowage</th>
         </tr>
         
-        <?php foreach($goods->getAllData() as $row) { ?>
+        <?php foreach($goods->getAllData() as $row) {
+        $stowDetailUrl = '/goods/stowageDetail/?detailNum=' . $row['Stowage_position']; ?>
           <tr>
             <td><?php echo $row['Scheepsnaam'] ?></td>
             <td><?php echo $row['Handling'] ?></td>
@@ -32,7 +33,8 @@ $goods = new goods();
             <td><?php echo $row['Shipping_Name'] ?></td>
             <td><?php echo $row['Packaging_Group'] ?></td>
             <td><?php echo $row['Equipment_number'] ?></td>
-            <td><?php echo $row['Stowage_position'] ?></td>
+            <td><?php echo "<a href='$stowDetailUrl'>";
+            echo $row['Stowage_position'] ?></a></td>
           </tr>
         <?php } ?>
       </table>
