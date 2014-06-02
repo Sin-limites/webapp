@@ -30,7 +30,6 @@ if(!empty($_SESSION['log'])){
       <ul>
         <li><a href="/">home</a></li>
         <li><a href="/goods/datalist/">data</a></li>
-        <li><a href="/goods/stowagedetail/?detailNum=091224">stow detail</a></li>
         <li><a href="/goods/map/">map</a></li>
       </ul>
     </div><!-- /nav -->
