@@ -104,7 +104,22 @@ function mapHmData (input){
       heatmapData.push(new L.LatLng(obj.Latitude,obj.Longitude,Math.random() * 5));
     }
     console.log(input[2].Latitude);
-}
+    for (var x = 0; x < heatmapData.length; x++) {
+
+      minLat = 51.95093084411432;
+      maxLat = 51.95669663370022;
+      minLng = 4.033999443054199;
+      maxLng = 4.072709083557129;
+
+      heatmapData[x].lat = getRandomInRange(minLat, maxLat, 3);
+      heatmapData[x].lng = getRandomInRange(minLng, maxLng, 3);
+    }
+  }
+
+  function getRandomInRange(from, to, fixed) {
+    return (Math.random() * (to - from) + from).toFixed(fixed) * 1;
+    // .toFixed() returns string, so ' * 1' is a trick to convert to number 
+  }
 
 function MoveToBookmark(loc) {
   switch (loc) {
