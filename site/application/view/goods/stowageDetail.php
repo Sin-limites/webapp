@@ -37,9 +37,11 @@
 	else if($cellX == 01) $cellX = 9;
 	else if($cellX == 03) $cellX = 10;
 	else if($cellX == 05) $cellX = 11;
-	else if($cellX == 07) $cellX = 13;
-	else if($cellX == 09) $cellX = 14;
-	else if($cellX == 11) $cellX = 16;
+	else if($cellX == 07) $cellX = 12;
+	else if($cellX == 09) $cellX = 13;
+	else if($cellX == 11) $cellX = 14;
+	else if($cellX == 13) $cellX = 15;
+	else if($cellX == 15) $cellX = 16;
 
 	//chage stow tier numbers to table tr numbers
 	$cellY = $tier;
