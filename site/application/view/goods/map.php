@@ -29,9 +29,7 @@
 
 <script>
 
-var data = <?php echo $goods->getContainerLocationData();
-
- ?>;
+var data = <?php echo $goods->getContainerLocationData(); ?>;
 var heatmapData = new Array();
 
 var map = L.map('map').setView([51.95823052624468, 4.051809310913086], 13);
