@@ -55,9 +55,9 @@ map.on('click', function(e) {
 });
 
 function mapHmData (input){
-    for (var i = 0; i < 60; i++) {
+    for (var i = 0; i < input.length; i++) {
       var obj = input[i];
-      heatmapData.push(new L.LatLng(0,0,Math.random() * 5));
+      heatmapData.push(new L.LatLng(obj.latitude,obj.longitude,Math.random() * 5));
     }
     console.log(input[2].Latitude);
     for (var x = 0; x < heatmapData.length; x++) {
@@ -71,25 +71,6 @@ function mapHmData (input){
       heatmapData[x].lng = getRandomInRange(minLng, maxLng, 3);
     }
   }
-
-// UNCOMMENT AFTER REVIEW
-// function mapHmData (input){
-    // for (var i = 0; i < input.length; i++) {
-      // var obj = input[i];
-      // heatmapData.push(new L.LatLng(obj.latitude,obj.longitude,Math.random() * 5));
-    // }
-    // console.log(input[2].Latitude);
-    // for (var x = 0; x < heatmapData.length; x++) {
-// 
-      // minLat = 51.95093084411432;
-      // maxLat = 51.95669663370022;
-      // minLng = 4.033999443054199;
-      // maxLng = 4.072709083557129;
-// 
-      // heatmapData[x].lat = getRandomInRange(minLat, maxLat, 3);
-      // heatmapData[x].lng = getRandomInRange(minLng, maxLng, 3);
-    // }
-  // }
 
   function getRandomInRange(from, to, fixed) {
     return (Math.random() * (to - from) + from).toFixed(fixed) * 1;
