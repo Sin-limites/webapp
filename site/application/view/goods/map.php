@@ -27,7 +27,7 @@
 
 <script>
 
-var data = <?php echo $goods->getLocationData(); ?>;
+var data = <?php echo $goods->getContainerLocationData(); ?>;
 var heatmapData = new Array();
 
 var map = L.map('map').setView([51.95823052624468, 4.051809310913086], 13);
@@ -53,7 +53,7 @@ map.on('click', function(e) {
 function mapHmData (input){
     for (var i = 0; i < input.length; i++) {
       var obj = input[i];
-      heatmapData.push(new L.LatLng(obj.Latitude,obj.Longitude,Math.random() * 5));
+      heatmapData.push(new L.LatLng(obj.latitude,obj.longitude,Math.random() * 5));
     }
     console.log(input[2].Latitude);
     for (var x = 0; x < heatmapData.length; x++) {

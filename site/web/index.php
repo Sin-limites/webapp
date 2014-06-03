@@ -16,13 +16,11 @@ session_start();
   
   <meta charset="utf-8">
   <link rel="stylesheet" href="/res/css/main.css">
-
+  
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <script src="http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
 
-  <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script>
-  
 </head>
 <body>
 
