@@ -5,41 +5,39 @@ class goodsModel {
   /*
    * 
    */
-  public static function parseData() {
-   
-    $pdo = dbConnect::getInstance();
+  public static function containerLocationData() {
+    $data = file_get_contents('http://145.24.222.137:8080/RestService/rest/location/get/'); 
+    $data = json_decode($data);
      
-    $locationData = $pdo->prepare("SELECT Equipment_number,Latitude,Longitude FROM p78_Goods");
-   
-    $locationData->execute();
-   
-    $returnArray = array();
-    if($locationData->rowCount()){
-      while($row = $locationData->fetch(PDO::FETCH_ASSOC)) {
-        array_push($returnArray, $row);
-      } 
-    } else {
-      die('er gaat iets mis');
-    }
-     
-    return $returnArray;
-   
+    return $data;
   }
   
   /*
    * 
    */
   public static function getData() {
-    $pdo = dbConnect::getInstance();
+    $data = file_get_contents('http://145.24.222.137:8080/RestService/rest/container/get/');
+    $data = json_decode($data);
     
-    $data = $pdo->prepare("SELECT * FROM p78_Goods");
-    $data->execute();
+    return $data;
+  }
+  
+  public static function loadStowageDetail($id) {
+    //
+  }
+  
+  public static function loadContainerDetail($id) {
+    $data = file_get_contents('http://145.24.222.137:8080/RestService/rest/container/get/'.$id.'/');
+    $data = json_decode($data);
     
-    if($data->rowCount()){
-      $return = $data->fetchAll(PDO::FETCH_ASSOC);
-      return $return;
-    }
-    return false;
+    return $data;
+  }
+  
+  public static function loadShipDetail($id) {
+    $data = file_get_contents('http://145.24.222.137:8080/RestService/rest/ship/get/'.$id.'/');
+    $data = json_decode($data);
+    
+    return $data;
   }
 
 }

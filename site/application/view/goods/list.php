@@ -11,28 +11,36 @@ $goods = new goods();
       
       <table border='1' id='goods_data'>
         <tr>
-          <th>Scheepsnaam</th>
-          <th>Handling</th>
-          <th>Terminal</th>
-          <th>Consignment_nr</th>
-          <th>Package kind</th>
-          <th>Shipping</th>
-          <th>Group</th>
-          <th>EquipNr</th>
+          <th>EQ</th>
+          <th>ShipID</th>
+          <th>HandlingID</th>
+          <th>PackagingID</th>
+          <th>ConsignmentNR</th>
+          <th>Uno</th>
+          <th>Ino</th>
+          <th>Flashpoint</th>
           <th>Stowage</th>
+          <th>Quantity</th>
+          <th>Weight</th>
+          <th>Port of discharge</th>
+          <th>Terminal</th>
         </tr>
         
         <?php foreach($goods->getAllData() as $row) { ?>
           <tr>
-            <td><?php echo $row['Scheepsnaam'] ?></td>
-            <td><?php echo $row['Handling'] ?></td>
-            <td><?php echo $row['Terminal'] ?></td>
-            <td><?php echo $row['Consignmentnr'] ?></td>
-            <td><?php echo $row['Kind_of_package'] ?></td>
-            <td><?php echo $row['Shipping_Name'] ?></td>
-            <td><?php echo $row['Packaging_Group'] ?></td>
-            <td><?php echo $row['Equipment_number'] ?></td>
-            <td><?php echo $row['Stowage_position'] ?></td>
+            <td><a href="/goods/containerDetail/<?php echo $row->equipmentnumber; ?>"><?php echo $row->equipmentnumber; ?></a>  </td>
+            <td><?php echo $row->shipid; ?></td>
+            <td><?php echo $row->handlingid; ?></td>
+            <td><?php echo $row->packagingid; ?></td>
+            <td><?php echo $row->consignmentnumber; ?></td>
+            <td><?php echo $row->uno; ?></td>
+            <td><?php echo $row->ino; ?></td>
+            <td><?php echo $row->flashpoint; ?></td>
+            <td><a href="/goods/stowageDetail/<?php echo $row->stowageposition; ?>"><?php echo $row->stowageposition; ?></a></td>
+            <td><?php echo $row->quantityincontainer; ?></td>
+            <td><?php echo $row->weight; ?></td>
+            <td><?php echo $row->portofdischarge; ?></td>
+            <td><?php echo $row->terminal; ?></td>
           </tr>
         <?php } ?>
       </table>
