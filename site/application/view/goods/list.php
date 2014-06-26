@@ -12,9 +12,9 @@ $goods = new goods();
       <table border='1' id='goods_data'>
         <tr>
           <th>EQ</th>
-          <th>ShipID</th>
-          <th>HandlingID</th>
-          <th>PackagingID</th>
+          <th>Ship name</th>
+          <th>Handling</th>
+          <th>Danger level</th>
           <th>ConsignmentNR</th>
           <th>Uno</th>
           <th>Ino</th>
@@ -27,20 +27,21 @@ $goods = new goods();
         </tr>
         
         <?php foreach($goods->getAllData() as $row) { ?>
+          
           <tr>
-            <td><a href="/goods/containerDetail/<?php echo $row->equipmentnumber; ?>"><?php echo $row->equipmentnumber; ?></a>  </td>
-            <td><?php echo $row->shipid; ?></td>
-            <td><?php echo $row->handlingid; ?></td>
-            <td><?php echo $row->packagingid; ?></td>
-            <td><?php echo $row->consignmentnumber; ?></td>
-            <td><?php echo $row->uno; ?></td>
-            <td><?php echo $row->ino; ?></td>
-            <td><?php echo $row->flashpoint; ?></td>
-            <td><a href="/goods/stowageDetail/<?php echo $row->stowageposition; ?>"><?php echo $row->stowageposition; ?></a></td>
-            <td><?php echo $row->quantityincontainer; ?></td>
-            <td><?php echo $row->weight; ?></td>
-            <td><?php echo $row->portofdischarge; ?></td>
-            <td><?php echo $row->terminal; ?></td>
+            <td><a href="/goods/containerDetail/<?php echo $row->equipmentNumber->equipmentNumber; ?>"><?php echo $row->equipmentNumber->equipmentNumber; ?></a>  </td>
+            <td><?php echo $row->shippingID->shippingName; ?></td>
+            <td><?php echo $row->equipmentNumber->handling->handlingName; ?></td>
+            <td><?php echo $row->equipmentNumber->packaging->packagingName; ?></td>
+            <td><?php echo $row->equipmentNumber->consignmentNumber; ?></td>
+            <td><?php echo $row->equipmentNumber->uno; ?></td>
+            <td><?php echo $row->equipmentNumber->imo; ?></td>
+            <td><?php echo $row->equipmentNumber->flashpoint; ?></td>
+            <td><a href="/goods/stowageDetail/<?php echo $row->equipmentNumber->stowagePosition; ?>"><?php echo $row->equipmentNumber->stowagePosition; ?></a></td>
+            <td><?php echo $row->equipmentNumber->quantityInContainer; ?></td>
+            <td><?php echo $row->equipmentNumber->weight; ?></td>
+            <td><?php echo $row->equipmentNumber->portOfDischarge; ?></td>
+            <td><?php echo $row->equipmentNumber->terminal; ?></td>
           </tr>
         <?php } ?>
       </table>

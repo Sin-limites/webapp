@@ -22,19 +22,19 @@
         </tr>
         
           <tr>
-            <td><?php echo $containerdetail->equipmentnumber; ?></td>
-            <td><?php echo $shipdetail->shipname; ?></td>
-            <td><?php echo $containerdetail->handlingid; ?></td>
-            <td><?php echo $containerdetail->packagingid; ?></td>
-            <td><?php echo $containerdetail->consignmentnumber; ?></td>
-            <td><?php echo $containerdetail->uno; ?></td>
-            <td><?php echo $containerdetail->ino; ?></td>
-            <td><?php echo $containerdetail->flashpoint; ?></td>
-            <td><a href="/goods/stowageDetail/<?php echo $containerdetail->stowageposition; ?>"><?php echo $containerdetail->stowageposition; ?></a></td>
-            <td><?php echo $containerdetail->quantityincontainer; ?></td>
-            <td><?php echo $containerdetail->weight; ?></td>
-            <td><?php echo $containerdetail->portofdischarge; ?></td>
-            <td><?php echo $containerdetail->terminal; ?></td>
+            <td><?php echo $containerdetail->equipmentNumber->equipmentNumber; ?></td>
+            <td><?php echo $containerdetail->shippingID->shippingName; ?></td>
+            <td><?php echo $containerdetail->equipmentNumber->handling->handlingName; ?></td>
+            <td><?php echo $containerdetail->equipmentNumber->packaging->packagingName; ?></td>
+            <td><?php echo $containerdetail->equipmentNumber->consignmentNumber; ?></td>
+            <td><?php echo $containerdetail->equipmentNumber->uno; ?></td>
+            <td><?php echo $containerdetail->equipmentNumber->imo; ?></td>
+            <td><?php echo $containerdetail->equipmentNumber->flashpoint; ?></td>
+            <td><a href="/goods/stowageDetail/<?php echo $containerdetail->equipmentNumber->stowagePosition; ?>"><?php echo $containerdetail->equipmentNumber->stowagePosition; ?></a></td>
+            <td><?php echo $containerdetail->equipmentNumber->quantityInContainer; ?></td>
+            <td><?php echo $containerdetail->equipmentNumber->weight; ?></td>
+            <td><?php echo $containerdetail->equipmentNumber->portOfDischarge; ?></td>
+            <td><?php echo $containerdetail->equipmentNumber->terminal; ?></td>
           </tr>
       </table>
     </section>

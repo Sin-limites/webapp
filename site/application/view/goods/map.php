@@ -4,13 +4,6 @@
   
 ?>
 
-  <!-- intro -->
-  <div class="intro">
-    <div id="banner">
-      <img src="/res/images/banner_01.png" />
-    </div>
-  </div><!-- /intro -->
-
   <!-- content -->
   <div class="holder_content">
     <section class="group1_sidebar">
@@ -34,7 +27,7 @@ var map = L.map('map').setView([51.95823052624468, 4.051809310913086], 13);
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>',
     maxZoom: 18,
-    minZoom: 1
+    minZoom: 12
 }).addTo(map);
 
 mapHmData(data);
@@ -52,25 +45,13 @@ map.on('click', function(e) {
 
 function mapHmData (input){
     for (var i = 0; i < input.length; i++) {
-      var obj = input[i];
+      var obj = input[i]['locationID'];
       heatmapData.push(new L.LatLng(obj.latitude,obj.longitude,5));
     }
-    // console.log(input[2].Latitude);
-    // for (var x = 0; x < heatmapData.length; x++) {
-// 
-      // minLat = 51.95093084411432;
-      // maxLat = 51.95669663370022;
-      // minLng = 4.033999443054199;
-      // maxLng = 4.072709083557129;
-// 
-      // heatmapData[x].lat = getRandomInRange(minLat, maxLat, 3);
-      // heatmapData[x].lng = getRandomInRange(minLng, maxLng, 3);
-    // }
   }
 
   function getRandomInRange(from, to, fixed) {
     return (Math.random() * (to - from) + from).toFixed(fixed) * 1;
-    // .toFixed() returns string, so ' * 1' is a trick to convert to number 
   }
 
 function MoveToBookmark(loc) {
