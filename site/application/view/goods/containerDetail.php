@@ -12,7 +12,7 @@
           <th>PackagingID</th>
           <th>ConsignmentNR</th>
           <th>Uno</th>
-          <th>Ino</th>
+          <th>Imo</th>
           <th>Flashpoint</th>
           <th>Stowage</th>
           <th>Quantity</th>
