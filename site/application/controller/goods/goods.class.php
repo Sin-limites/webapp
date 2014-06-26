@@ -1,7 +1,9 @@
 <?php
 
 class goods extends mvc{
-    
+  public $order;
+  public $flow;
+	
   public function __construct() {
         $this->loadModel('goodsModel');
     }
@@ -48,7 +50,7 @@ class goods extends mvc{
    * 
    */
   public function getAllData() {
-    return goodsModel::getData();
+    return goodsModel::getData($this->order, $this->flow);
   }
   
   /*

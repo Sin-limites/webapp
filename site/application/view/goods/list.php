@@ -1,6 +1,21 @@
 <?php
+$order = "";
+$flow = "";
 
+if (isset($_GET['order']))
+	$order = $_GET['order'];
+
+if (isset($_GET['flow']))
+	$flow = $_GET['flow'];
+	
 $goods = new goods();
+$goods->order = $order;
+$goods->flow = $flow;
+
+if ($flow == "asc")
+	$flow = "desc";
+else
+	$flow = "asc";
 
 ?>
 
@@ -11,22 +26,22 @@ $goods = new goods();
       
       <table border='1' id='goods_data'>
         <tr>
-          <th>EQ</th>
+          <th><a href="?order=equipmentNumber&flow=<?php echo $flow;?>">EQ</a></th>
           <th>Ship name</th>
-          <th>Handling</th>
-          <th>Danger level</th>
-          <th>ConsignmentNR</th>
-          <th>Uno</th>
-          <th>Ino</th>
-          <th>Flashpoint</th>
-          <th>Stowage</th>
-          <th>Quantity</th>
-          <th>Weight</th>
-          <th>Port of discharge</th>
-          <th>Terminal</th>
+          <th><a href="?order=handlingID&flow=<?php echo $flow;?>">Handling</a></th>
+          <th><a href="?order=packagingID&flow=<?php echo $flow;?>">Danger level</a></th>
+          <th><a href="?order=consignmentNumber&flow=<?php echo $flow;?>">ConsignmentNR</a></th>
+          <th><a href="?order=uno&flow=<?php echo $flow;?>">Uno</a></th>
+          <th><a href="?order=imo&flow=<?php echo $flow;?>">Imo</a></th>
+          <th><a href="?order=flashpoint&flow=<?php echo $flow;?>">Flashpoint</a></th>
+          <th><a href="?order=stowagePosition&flow=<?php echo $flow;?>">Stowage</a></th>
+          <th><a href="?order=quantityincontainer&flow=<?php echo $flow;?>">Quantity</a></th>
+          <th><a href="?order=weight&flow=<?php echo $flow;?>">Weight</a></th>
+          <th><a href="?order=portofdischarge&flow=<?php echo $flow;?>">Port of discharge</a></th>
+          <th><a href="?order=terminal&flow=<?php echo $flow;?>">Terminal</a></th>
         </tr>
         
-        <?php foreach($goods->getAllData() as $row) { ?>
+        <?php foreach($goods->getAllData(null) as $row) { ?>
           
           <tr>
             <td><a href="/goods/containerDetail/<?php echo $row->equipmentNumber->equipmentNumber; ?>"><?php echo $row->equipmentNumber->equipmentNumber; ?></a>  </td>

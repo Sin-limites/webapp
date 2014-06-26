@@ -1,7 +1,6 @@
 <?php
 
 class goodsModel {
-  
   /*
    * 
    */
@@ -16,8 +15,21 @@ class goodsModel {
   /*
    * 
    */
-  public static function getData() {
-    $data = file_get_contents('http://145.24.222.137:8080/Rebuild/rest/container/get/');
+  public static function getData($order, $flow) {
+  
+	if ($flow != "asc" && $flow != "desc")
+		$flow = "";
+		
+	if ($order != "equipmentNumber" && $order != "handlingID" && $order != "packagingID" && $order != "consignmentNumber" && $order != "uno"
+	&& $order != "imo" && $order != "flashpoint" && $order != "stowagePosition" && $order != "quantityincontainer" 
+	&& $order != "weight" && $order != "portofdischarge" && $order != "terminal")
+		$order = "";
+		
+	if ($order == "")
+		$data = file_get_contents('http://145.24.222.137:8080/Rebuild/rest/container/get/');
+	else
+		$data = file_get_contents('http://145.24.222.137:8080/Rebuild/rest/container/get/?order='.$order.'&order='.$flow);
+		
     $data = json_decode($data);
     
     return $data;
